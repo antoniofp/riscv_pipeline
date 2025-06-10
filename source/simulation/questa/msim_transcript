@@ -21,138 +21,39 @@
 # vmap work rtl_work
 # Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
 # vmap work rtl_work 
-# Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Copying d:/quartus/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/alu.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top.v 
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/imm_extend.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/imm_extend.v 
-# -- Compiling module imm_extend
-# 
-# Top level modules:
-# 	imm_extend
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/data_memory.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/data_memory.v 
-# -- Compiling module data_memory
-# 
-# Top level modules:
-# 	data_memory
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/control_unit.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/control_unit.v 
-# -- Compiling module control_unit
-# 
-# Top level modules:
-# 	control_unit
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu.v 
+# Start time: 08:37:45 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
+# End time: 08:37:45 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/main_decoder.v}
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/alu_tb.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/main_decoder.v 
-# -- Compiling module main_decoder
+# Start time: 08:37:45 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/alu_tb.v 
+# -- Compiling module alu_tb
 # 
 # Top level modules:
-# 	main_decoder
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu_decoder.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu_decoder.v 
-# -- Compiling module alu_decoder
-# 
-# Top level modules:
-# 	alu_decoder
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/program_counter.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/program_counter.v 
-# -- Compiling module program_counter
-# 
-# Top level modules:
-# 	program_counter
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/register_file.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/register_file.v 
-# -- Compiling module register_file
-# 
-# Top level modules:
-# 	register_file
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/instruction_memory.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:44 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/instruction_memory.v 
-# -- Compiling module instruction_memory
-# 
-# Top level modules:
-# 	instruction_memory
-# End time: 23:49:44 on May 29,2025, Elapsed time: 0:00:00
+# 	alu_tb
+# End time: 08:37:46 on Jun 10,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source {C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 23:49:45 on May 29,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source" C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v 
-# -- Compiling module top_tb
-# 
-# Top level modules:
-# 	top_tb
-# End time: 23:49:45 on May 29,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  top_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" top_tb 
-# Start time: 23:49:45 on May 29,2025
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  alu_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" alu_tb 
+# Start time: 08:37:47 on Jun 10,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.top_tb(fast)
-# Loading work.top(fast)
-# Loading work.program_counter(fast)
-# Loading work.instruction_memory(fast)
-# Loading work.control_unit(fast)
-# Loading work.main_decoder(fast)
-# Loading work.alu_decoder(fast)
-# Loading work.register_file(fast)
-# Loading work.imm_extend(fast)
+# Loading work.alu_tb(fast)
 # Loading work.alu(fast)
-# Loading work.data_memory(fast)
 # 
 # add wave *
 # view structure
@@ -160,53 +61,4 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $finish    : C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v(27)
-#    Time: 1070 ps  Iteration: 0  Instance: /top_tb
-# 1
-# Break in Module top_tb at C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v line 27
-add wave -position end  sim:/top_tb/cpu_dut/clk
-add wave -position end  sim:/top_tb/cpu_dut/reset
-add wave -position end  sim:/top_tb/cpu_dut/pc
-add wave -position end  sim:/top_tb/cpu_dut/pc_target
-add wave -position end  sim:/top_tb/cpu_dut/instr
-add wave -position end  sim:/top_tb/cpu_dut/pc_src
-add wave -position end  sim:/top_tb/cpu_dut/mem_write
-add wave -position end  sim:/top_tb/cpu_dut/alu_src
-add wave -position end  sim:/top_tb/cpu_dut/reg_write
-add wave -position end  sim:/top_tb/cpu_dut/result_src
-add wave -position end  sim:/top_tb/cpu_dut/imm_src
-add wave -position end  sim:/top_tb/cpu_dut/alu_control
-add wave -position end  sim:/top_tb/cpu_dut/rd1
-add wave -position end  sim:/top_tb/cpu_dut/rd2
-add wave -position end  sim:/top_tb/cpu_dut/result
-add wave -position end  sim:/top_tb/cpu_dut/imm_ext
-add wave -position end  sim:/top_tb/cpu_dut/alu_result
-add wave -position end  sim:/top_tb/cpu_dut/src_a
-add wave -position end  sim:/top_tb/cpu_dut/src_b
-add wave -position end  sim:/top_tb/cpu_dut/zero
-add wave -position end  sim:/top_tb/cpu_dut/read_data
-# Break key hit
-# Break key hit
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.top_tb(fast)
-# Loading work.top(fast)
-# Loading work.program_counter(fast)
-# Loading work.instruction_memory(fast)
-# Loading work.control_unit(fast)
-# Loading work.main_decoder(fast)
-# Loading work.alu_decoder(fast)
-# Loading work.register_file(fast)
-# Loading work.imm_extend(fast)
-# Loading work.alu(fast)
-# Loading work.data_memory(fast)
-run -continue
-# ** Note: $finish    : C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v(27)
-#    Time: 1070 ps  Iteration: 0  Instance: /top_tb
-# 1
-# Break in Module top_tb at C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v line 27
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/simulation/questa/wave.do
-# End time: 00:38:58 on May 30,2025, Elapsed time: 0:49:13
-# Errors: 0, Warnings: 1
+# Causality operation skipped due to absence of debug database file
