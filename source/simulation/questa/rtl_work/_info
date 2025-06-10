@@ -12,10 +12,10 @@ Z0 !s99 nomlopt
 cModel Technology
 Z1 dC:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa
 T_opt
-!s110 1749583750
-V<zE]lbzn2^[l3cViQBoQl3
-04 18 4 work program_counter_tb fast 0
-=1-98fa9bf3bf64-68488784-16a-5dc0
+!s110 1749584189
+V6]:nfW5TgA3WTe5DhShSi1
+04 16 4 work register_file_tb fast 0
+=1-98fa9bf3bf64-6848893c-d6-46d4
 R0
 !s12b OEM100
 !s124 OEM10U2 
@@ -23,51 +23,51 @@ o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L
 Z2 tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
-vprogram_counter
-2C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter.v
-Z3 !s110 1749583746
+vregister_file
+2C:/Users/edwin/Desktop/riscv_pipeline/source/register_file.v
+!s110 1749584185
 !i10b 1
-!s100 bKNA>5gAXjzTmo^3gWaRj3
-IT8EbOQX[R0UZ`nB7;g4lc2
+!s100 i?XkK[6>M^I09I[MWl3ZM1
+IM;PPT>VFhP34VhF]J5G@02
 R1
 w1749563555
-8C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter.v
-FC:/Users/edwin/Desktop/riscv_pipeline/source/program_counter.v
+8C:/Users/edwin/Desktop/riscv_pipeline/source/register_file.v
+FC:/Users/edwin/Desktop/riscv_pipeline/source/register_file.v
 !i122 0
-L0 1 15
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2023.3;77
+L0 1 27
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2023.3;77
 r1
 !s85 0
 31
-!s108 1749583745.000000
-!s107 C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source|C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter.v|
+!s108 1749584185.000000
+!s107 C:/Users/edwin/Desktop/riscv_pipeline/source/register_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source|C:/Users/edwin/Desktop/riscv_pipeline/source/register_file.v|
 !i113 0
-Z6 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z7 !s92 -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 !s92 -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
-vprogram_counter_tb
-2C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter_tb.v
-R3
+vregister_file_tb
+2C:/Users/edwin/Desktop/riscv_pipeline/source/register_file_tb.v
+!s110 1749584186
 !i10b 1
-!s100 :Bhl^`Z<9;f0kF6A0F8ET0
-I[=Y2O6`mbaGYz;KXZ;:H`0
+!s100 7<E=UoV6MAb;a3ie9gUL]0
+I2=i9b]Ed[O[FVB5c`URhF0
 R1
-w1749583471
-8C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter_tb.v
-FC:/Users/edwin/Desktop/riscv_pipeline/source/program_counter_tb.v
+w1749584097
+8C:/Users/edwin/Desktop/riscv_pipeline/source/register_file_tb.v
+FC:/Users/edwin/Desktop/riscv_pipeline/source/register_file_tb.v
 !i122 1
-L0 3 46
+L0 3 68
+R3
 R4
-R5
 r1
 !s85 0
 31
-!s108 1749583746.000000
-!s107 C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source|C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter_tb.v|
+!s108 1749584186.000000
+!s107 C:/Users/edwin/Desktop/riscv_pipeline/source/register_file_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source|C:/Users/edwin/Desktop/riscv_pipeline/source/register_file_tb.v|
 !i113 0
+R5
 R6
-R7
 R2

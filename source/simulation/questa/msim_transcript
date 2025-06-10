@@ -24,36 +24,36 @@
 # Copying d:/quartus/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/register_file.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:29:05 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter.v 
-# -- Compiling module program_counter
+# Start time: 13:36:25 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/register_file.v 
+# -- Compiling module register_file
 # 
 # Top level modules:
-# 	program_counter
-# End time: 13:29:06 on Jun 10,2025, Elapsed time: 0:00:01
+# 	register_file
+# End time: 13:36:25 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/register_file_tb.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:29:06 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/program_counter_tb.v 
-# -- Compiling module program_counter_tb
+# Start time: 13:36:26 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/register_file_tb.v 
+# -- Compiling module register_file_tb
 # 
 # Top level modules:
-# 	program_counter_tb
-# End time: 13:29:06 on Jun 10,2025, Elapsed time: 0:00:00
+# 	register_file_tb
+# End time: 13:36:26 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  program_counter_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" program_counter_tb 
-# Start time: 13:29:07 on Jun 10,2025
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  register_file_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" register_file_tb 
+# Start time: 13:36:26 on Jun 10,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.program_counter_tb(fast)
-# Loading work.program_counter(fast)
+# Loading work.register_file_tb(fast)
+# Loading work.register_file(fast)
 # 
 # add wave *
 # view structure
@@ -61,12 +61,11 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Reset: pc = 00000000 (esperado: 00000000)
-# PC Next 1: pc = 00000020 (esperado: 00000020)
-# PC Next 2: pc = 00000030 (esperado: 00000030)
-# Reset again: pc = 00000000 (esperado: 00000000)
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa/program_counter_wave.do
+# Lectura: rd1 = deadbeef (esperado: DEADBEEF), rd2 = 00000000 (esperado: 00000000)
+# Lectura: rd1 = 00000000 (esperado: 00000000), rd2 = 12345678 (esperado: 12345678)
+# Lectura x0: rd1 = 00000000, rd2 = 00000000 (esperado: 00000000, 00000000)
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa/register_file_wave.do
 # Break key hit
 # Simulation stop requested.
-# End time: 13:31:57 on Jun 10,2025, Elapsed time: 0:02:50
+# End time: 13:38:34 on Jun 10,2025, Elapsed time: 0:02:08
 # Errors: 0, Warnings: 1

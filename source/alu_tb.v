@@ -8,7 +8,7 @@ module alu_tb;
     wire [31:0] result;
     wire zero;
 
-    alu DUT(
+    alu uut (
         .src_a(src_a),
         .src_b(src_b),
         .alu_control(alu_control),
@@ -17,36 +17,37 @@ module alu_tb;
     );
 
     initial begin
-        // Test case 1: Suma
-        src_a = 32'h00000001;
-        src_b = 32'h00000002;
-        alu_control = 3'b000; // suma
+        // Test suma
+        src_a = 32'd10; src_b = 32'd5; alu_control = 3'b000;
         #10;
+        $display("SUMA: %d + %d = %d, zero = %b", src_a, src_b, result, zero);
 
-        // Test case 2: Resta
-        src_a = 32'h00000005;
-        src_b = 32'h00000003;
-        alu_control = 3'b001; // resta
+        // Test resta
+        src_a = 32'd10; src_b = 32'd10; alu_control = 3'b001;
         #10;
+        $display("RESTA: %d - %d = %d, zero = %b", src_a, src_b, result, zero);
 
-        // Test case 3: AND lógico
-        src_a = 32'hF0F0F0F0;
-        src_b = 32'h0F0F0F0F;
-        alu_control = 3'b010; // and lógico
+        // Test AND
+        src_a = 32'hF0F0F0F0; src_b = 32'h0F0F0F0F; alu_control = 3'b010;
         #10;
+        $display("AND: %h & %h = %h, zero = %b", src_a, src_b, result, zero);
 
-        // Test case 4: OR lógico
-        src_a = 32'hF0F0F0F0;
-        src_b = 32'h0F0F0F0F;
-        alu_control = 3'b011; // or lógico
+        // Test OR
+        src_a = 32'hF0F0F0F0; src_b = 32'h0F0F0F0F; alu_control = 3'b011;
         #10;
+        $display("OR: %h | %h = %h, zero = %b", src_a, src_b, result, zero);
 
-        // Test case 5: Set less than
-        src_a = 32'h00000001;
-        src_b = 32'h00000002;
-        alu_control = 3'b101; // set less than
+        // Test SLT
+        src_a = 32'd5; src_b = 32'd10; alu_control = 3'b101;
         #10;
+        $display("SLT: %d < %d = %d, zero = %b", src_a, src_b, result, zero);
 
+        // Test default
+        src_a = 32'd1; src_b = 32'd1; alu_control = 3'b100;
+        #10;
+        $display("DEFAULT: %d, zero = %b", result, zero);
+
+        $finish;
     end
 
 endmodule
