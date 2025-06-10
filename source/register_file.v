@@ -14,9 +14,9 @@ module register_file(
 	assign rd1 = (a1 == 5'b00000) ? 32'b0 : registers[a1];
 	assign rd2 = (a2 == 5'b00000) ? 32'b0 : registers[a2];
 	
-	// escritura síncrona (en flanco positivo del reloj)
+	// escritura síncrona (en flanco negativo del reloj)
 	//se hace de forma síncrona para evitar escrituras y lecturas simultáneas que puedan causar condiciones de carrera
-	always @(posedge clk) begin
+	always @(negedge clk) begin
 		// solo escribir si write enable está activo y no es el registro x0
 		// el registro x0 siempre debe mantenerse en 0 según la especificación risc-v
 		if (we3 && (a3 != 5'b00000)) begin
