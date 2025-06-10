@@ -24,36 +24,36 @@
 # Copying d:/quartus/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/data_memory.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/imm_extend.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 10:21:31 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/data_memory.v 
-# -- Compiling module data_memory
+# Start time: 10:45:09 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/imm_extend.v 
+# -- Compiling module imm_extend
 # 
 # Top level modules:
-# 	data_memory
-# End time: 10:21:31 on Jun 10,2025, Elapsed time: 0:00:00
+# 	imm_extend
+# End time: 10:45:09 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/data_memory_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/imm_extend_tb.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 10:21:31 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/data_memory_tb.v 
-# -- Compiling module data_memory_tb
+# Start time: 10:45:09 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/imm_extend_tb.v 
+# -- Compiling module imm_extend_tb
 # 
 # Top level modules:
-# 	data_memory_tb
-# End time: 10:21:31 on Jun 10,2025, Elapsed time: 0:00:00
+# 	imm_extend_tb
+# End time: 10:45:09 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  data_memory_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" data_memory_tb 
-# Start time: 10:21:31 on Jun 10,2025
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  imm_extend_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" imm_extend_tb 
+# Start time: 10:45:10 on Jun 10,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.data_memory_tb(fast)
-# Loading work.data_memory(fast)
+# Loading work.imm_extend_tb(fast)
+# Loading work.imm_extend(fast)
 # 
 # add wave *
 # view structure
@@ -61,11 +61,8 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Lectura de 0x04: rd = deadbeef (esperado: DEADBEEF)
-# Lectura de 0x08: rd = 12345678 (esperado: 12345678)
-# Lectura de 0x0C: rd = xxxxxxxx (esperado: 00000000 o valor por defecto)
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa/data_memory_wave.do
-# Break key hit
-# Simulation stop requested.
-# End time: 10:26:12 on Jun 10,2025, Elapsed time: 0:04:41
-# Errors: 0, Warnings: 1
+# I-TYPE: imm_ext = ffffffff (esperado: FFFFFFFF)
+# S-TYPE: imm_ext = 000001e4
+# B-TYPE: imm_ext = 00000208
+# J-TYPE: imm_ext = 00000008
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa/imm_extend_wave.do
