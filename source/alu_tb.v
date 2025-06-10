@@ -8,7 +8,7 @@ module alu_tb;
     wire [31:0] result;
     wire zero;
 
-    alu DUT (
+    alu DUT(
         .src_a(src_a),
         .src_b(src_b),
         .alu_control(alu_control),

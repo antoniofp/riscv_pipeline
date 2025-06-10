@@ -24,58 +24,36 @@
 # Copying d:/quartus/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/control_unit.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/data_memory.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 09:51:04 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/control_unit.v 
-# -- Compiling module control_unit
+# Start time: 10:21:31 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/data_memory.v 
+# -- Compiling module data_memory
 # 
 # Top level modules:
-# 	control_unit
-# End time: 09:51:04 on Jun 10,2025, Elapsed time: 0:00:00
+# 	data_memory
+# End time: 10:21:31 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/main_decoder.v}
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/data_memory_tb.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 09:51:04 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/main_decoder.v 
-# -- Compiling module main_decoder
+# Start time: 10:21:31 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/data_memory_tb.v 
+# -- Compiling module data_memory_tb
 # 
 # Top level modules:
-# 	main_decoder
-# End time: 09:51:04 on Jun 10,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/alu_decoder.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 09:51:04 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/alu_decoder.v 
-# -- Compiling module alu_decoder
-# 
-# Top level modules:
-# 	alu_decoder
-# End time: 09:51:04 on Jun 10,2025, Elapsed time: 0:00:00
+# 	data_memory_tb
+# End time: 10:21:31 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/control_unit_tb.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 09:51:05 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/control_unit_tb.v 
-# -- Compiling module control_unit_tb
-# 
-# Top level modules:
-# 	control_unit_tb
-# End time: 09:51:05 on Jun 10,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  control_unit_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" control_unit_tb 
-# Start time: 09:51:06 on Jun 10,2025
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  data_memory_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" data_memory_tb 
+# Start time: 10:21:31 on Jun 10,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.control_unit_tb(fast)
-# Loading work.control_unit(fast)
-# Loading work.main_decoder(fast)
-# Loading work.alu_decoder(fast)
+# Loading work.data_memory_tb(fast)
+# Loading work.data_memory(fast)
 # 
 # add wave *
 # view structure
@@ -83,16 +61,11 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Tipo R (ADD): pc_src=0, mem_write=0, alu_src=0, reg_write=1, alu_control=000
-# Tipo R (SUB): pc_src=0, mem_write=0, alu_src=0, reg_write=1, alu_control=001
-# Tipo I (LW): pc_src=0, mem_write=0, alu_src=1, reg_write=1, alu_control=000
-# Tipo S (SW): pc_src=0, mem_write=1, alu_src=1, reg_write=0, alu_control=000
-# Tipo B (BEQ, no tomado): pc_src=0, mem_write=0, alu_src=0, reg_write=0, alu_control=001
-# Tipo B (BEQ, tomado): pc_src=1, mem_write=0, alu_src=0, reg_write=0, alu_control=001
-# Tipo J (JAL): pc_src=1, mem_write=0, alu_src=x, reg_write=1, alu_control=000
-# ** Note: $finish    : C:/Users/edwin/Desktop/riscv_pipeline/source/control_unit_tb.v(71)
-#    Time: 70 ns  Iteration: 0  Instance: /control_unit_tb
-# 1
-# Break in Module control_unit_tb at C:/Users/edwin/Desktop/riscv_pipeline/source/control_unit_tb.v line 71
-# End time: 09:58:39 on Jun 10,2025, Elapsed time: 0:07:33
+# Lectura de 0x04: rd = deadbeef (esperado: DEADBEEF)
+# Lectura de 0x08: rd = 12345678 (esperado: 12345678)
+# Lectura de 0x0C: rd = xxxxxxxx (esperado: 00000000 o valor por defecto)
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa/data_memory_wave.do
+# Break key hit
+# Simulation stop requested.
+# End time: 10:26:12 on Jun 10,2025, Elapsed time: 0:04:41
 # Errors: 0, Warnings: 1
