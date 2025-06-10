@@ -3,119 +3,254 @@ module top(
 	input reset		
 );
 
-	// señales del program counter
-	wire [31:0] pc, pc_next, pc_plus4, pc_target;
+	// ========== SEÑALES DE FETCH (F) ==========
+	wire [31:0] PCF, PCNextF, PCPlus4F;
+	wire [31:0] InstrF;
 	
-	// señales de la memoria de instrucciones
-	wire [31:0] instr;
+	// ========== REGISTROS IF/ID ==========
+	reg [31:0] InstrD, PCD, PCPlus4D;
 	
-	// señales del control unit
-	wire pc_src, mem_write, alu_src, reg_write;
-	wire [1:0] result_src, imm_src;
-	wire [2:0] alu_control;
+	// ========== SEÑALES DE DECODE (D) ==========
+	wire RegWriteD, ALUSrcD, MemWriteD, BranchD, JumpD;
+	wire [1:0] ResultSrcD, ImmSrcD;
+	wire [2:0] ALUControlD;
+	wire [31:0] RD1D, RD2D, ImmExtD;
 	
-	// señales del register file
-	wire [31:0] rd1, rd2, result;
+	// ========== REGISTROS ID/EX ==========
+	reg RegWriteE, ALUSrcE, MemWriteE, BranchE, JumpE;
+	reg [1:0] ResultSrcE;
+	reg [2:0] ALUControlE;
+	reg [31:0] RD1E, RD2E, PCE, ImmExtE, PCPlus4E;
+	reg [4:0] Rs1E, Rs2E, RdE;	// direcciones de registros para forwarding futuro
 	
-	// señal del immediate extend
-	wire [31:0] imm_ext;
+	// ========== SEÑALES DE EXECUTE (E) ==========
+	wire [31:0] SrcAE, SrcBE, ALUResultE, PCTargetE;
+	wire ZeroE, PCSrcE;
 	
-	// señales de la alu
-	wire [31:0] alu_result, src_a, src_b;
-	wire zero;
+	// ========== REGISTROS EX/MEM ==========
+	reg RegWriteM, MemWriteM;
+	reg [1:0] ResultSrcM;
+	reg [31:0] ALUResultM, WriteDataM, PCPlus4M;
+	reg [4:0] RdM;
 	
-	// señales de la memoria de datos
-	wire [31:0] read_data;
+	// ========== SEÑALES DE MEMORY (M) ==========
+	wire [31:0] ReadDataM;
 	
-	// oa asi a instanciar
+	// ========== REGISTROS MEM/WB ==========
+	reg RegWriteW;
+	reg [1:0] ResultSrcW;
+	reg [31:0] ALUResultW, ReadDataW, PCPlus4W;
+	reg [4:0] RdW;
+	
+	// ========== SEÑALES DE WRITEBACK (W) ==========
+	wire [31:0] ResultW;
+
+	// ========== FETCH STAGE ==========
 	
 	// program counter
 	program_counter pc_reg(
 		.clk(clk),
-		.reset(reset),		// nueva conexión
-		.pc_next(pc_next),
-		.pc(pc)
+		.reset(reset),
+		.pc_next(PCNextF),
+		.pc(PCF)
 	);
 	
 	// memoria de instrucciones
 	instruction_memory imem(
-		.addr(pc),
-		.instr(instr)
+		.addr(PCF),
+		.instr(InstrF)
 	);
+	
+	// sumador pc + 4
+	assign PCPlus4F = PCF + 32'd4;
+	
+	// mux para siguiente pc (incluye lógica de branch/jump desde execute stage)
+	assign PCNextF = PCSrcE ? PCTargetE : PCPlus4F;
+
+	// ========== REGISTRO IF/ID ==========
+	always @(posedge clk or posedge reset) begin
+		if (reset) begin
+			InstrD <= 32'h00000000;	// nop instruction
+			PCD <= 32'h00000000;
+			PCPlus4D <= 32'h00000000;
+		end else begin
+			InstrD <= InstrF;
+			PCD <= PCF;
+			PCPlus4D <= PCPlus4F;
+		end
+	end
+
+	// ========== DECODE STAGE ==========
 	
 	// unidad de control
 	control_unit cu(
-		.clk(clk),
-		.op(instr[6:0]),
-		.funct3(instr[14:12]),
-		.funct7_5(instr[30]),
-		.zero(zero),
-		.pc_src(pc_src),
-		.mem_write(mem_write),
-		.alu_src(alu_src),
-		.reg_write(reg_write),
-		.result_src(result_src),
-		.imm_src(imm_src),
-		.alu_control(alu_control)
+		.op(InstrD[6:0]),
+		.funct3(InstrD[14:12]),
+		.funct7_5(InstrD[30]),
+		.reg_writeD(RegWriteD),
+		.alu_srcD(ALUSrcD),
+		.mem_writeD(MemWriteD),
+		.branchD(BranchD),
+		.jumpD(JumpD),
+		.result_srcD(ResultSrcD),
+		.imm_srcD(ImmSrcD),
+		.alu_controlD(ALUControlD)
 	);
 	
 	// banco de registros
 	register_file rf(
 		.clk(clk),
-		.we3(reg_write),
-		.a1(instr[19:15]),		// rs1
-		.a2(instr[24:20]),		// rs2
-		.a3(instr[11:7]),		// rd
-		.wd3(result),
-		.rd1(rd1),
-		.rd2(rd2)
+		.we3(RegWriteW),			// write enable viene de writeback stage
+		.a1(InstrD[19:15]),			// rs1
+		.a2(InstrD[24:20]),			// rs2
+		.a3(RdW),					// rd viene de writeback stage
+		.wd3(ResultW),				// write data viene de writeback stage
+		.rd1(RD1D),
+		.rd2(RD2D)
 	);
 	
 	// extensor de inmediatos
 	imm_extend extend(
-		.instr(instr[31:7]),
-		.imm_src(imm_src),
-		.imm_ext(imm_ext)
+		.instr(InstrD[31:7]),
+		.imm_src(ImmSrcD),
+		.imm_ext(ImmExtD)
 	);
+
+	// ========== REGISTRO ID/EX ==========
+	always @(posedge clk or posedge reset) begin
+		if (reset) begin
+			// control signals
+			RegWriteE <= 1'b0;
+			ALUSrcE <= 1'b0;
+			MemWriteE <= 1'b0;
+			BranchE <= 1'b0;
+			JumpE <= 1'b0;
+			ResultSrcE <= 2'b00;
+			ALUControlE <= 3'b000;
+			
+			// data signals
+			RD1E <= 32'h00000000;
+			RD2E <= 32'h00000000;
+			PCE <= 32'h00000000;
+			ImmExtE <= 32'h00000000;
+			PCPlus4E <= 32'h00000000;
+			
+			// register addresses para forwarding futuro
+			Rs1E <= 5'b00000;
+			Rs2E <= 5'b00000;
+			RdE <= 5'b00000;
+		end 
+		else begin
+			// control signals
+			RegWriteE <= RegWriteD;
+			ALUSrcE <= ALUSrcD;
+			MemWriteE <= MemWriteD;
+			BranchE <= BranchD;
+			JumpE <= JumpD;
+			ResultSrcE <= ResultSrcD;
+			ALUControlE <= ALUControlD;
+			
+			// data signals
+			RD1E <= RD1D;
+			RD2E <= RD2D;
+			PCE <= PCD;
+			ImmExtE <= ImmExtD;
+			PCPlus4E <= PCPlus4D;
+			
+			// register addresses
+			Rs1E <= InstrD[19:15];
+			Rs2E <= InstrD[24:20];
+			RdE <= InstrD[11:7];
+		end
+	end
+
+	// ========== EXECUTE STAGE ==========
+	
+	// mux para segundo operando de alu
+	assign SrcBE = ALUSrcE ? ImmExtE : RD2E;
+	assign SrcAE = RD1E;	// por claridad, aunque es directo
 	
 	// alu
 	alu alu_unit(
-		.src_a(src_a),
-		.src_b(src_b),
-		.alu_control(alu_control),
-		.result(alu_result),
-		.zero(zero)
+		.src_a(SrcAE),
+		.src_b(SrcBE),
+		.alu_control(ALUControlE),
+		.result(ALUResultE),
+		.zero(ZeroE)
 	);
+	
+	// lógica de branch/jump
+	assign PCSrcE = (BranchE & ZeroE) | JumpE;
+	assign PCTargetE = PCE + ImmExtE;
+
+	// ========== REGISTRO EX/MEM ==========
+	always @(posedge clk or posedge reset) begin
+		if (reset) begin
+			// control signals
+			RegWriteM <= 1'b0;
+			MemWriteM <= 1'b0;
+			ResultSrcM <= 2'b00;
+			
+			// data signals
+			ALUResultM <= 32'h00000000;
+			WriteDataM <= 32'h00000000;
+			PCPlus4M <= 32'h00000000;
+			RdM <= 5'b00000;
+		end else begin
+			// control signals
+			RegWriteM <= RegWriteE;
+			MemWriteM <= MemWriteE;
+			ResultSrcM <= ResultSrcE;
+			
+			// data signals
+			ALUResultM <= ALUResultE;
+			WriteDataM <= RD2E;		// datos a escribir en memoria
+			PCPlus4M <= PCPlus4E;
+			RdM <= RdE;
+		end
+	end
+
+	// ========== MEMORY STAGE ==========
 	
 	// memoria de datos
 	data_memory dmem(
 		.clk(clk),
-		.we(mem_write),
-		.addr(alu_result),
-		.wd(rd2),
-		.rd(read_data)
+		.we(MemWriteM),
+		.addr(ALUResultM),
+		.wd(WriteDataM),
+		.rd(ReadDataM)
 	);
+
+	// ========== REGISTRO MEM/WB ==========
+	always @(posedge clk or posedge reset) begin
+		if (reset) begin
+			// control signals
+			RegWriteW <= 1'b0;
+			ResultSrcW <= 2'b00;
+			
+			// data signals
+			ALUResultW <= 32'h00000000;
+			ReadDataW <= 32'h00000000;
+			PCPlus4W <= 32'h00000000;
+			RdW <= 5'b00000;
+		end else begin
+			// control signals
+			RegWriteW <= RegWriteM;
+			ResultSrcW <= ResultSrcM;
+			
+			// data signals
+			ALUResultW <= ALUResultM;
+			ReadDataW <= ReadDataM;
+			PCPlus4W <= PCPlus4M;
+			RdW <= RdM;
+		end
+	end
+
+	// ========== WRITEBACK STAGE ==========
 	
-	// muxes y lógica combinacional (muy simples para ser un módulo aparte)
-	
-	// sumador pc + 4
-	assign pc_plus4 = pc + 32'd4;
-	
-	// sumador pc + imm (para branches y jumps)
-	assign pc_target = pc + imm_ext;
-	
-	// mux para seleccionar siguiente valor del pc
-	assign pc_next = pc_src ? pc_target : pc_plus4;
-	
-	// mux para seleccionar operando b de la alu
-	assign src_b = alu_src ? imm_ext : rd2;
-	
-	// src_a siempre viene del register file, es para mantener los nombres igual al diagraam
-	assign src_a = rd1;
-	
-	// mux para seleccionar el resultado a escribir en el register file
-	assign result = (result_src == 2'b00) ? alu_result :
-						(result_src == 2'b01) ? read_data :
-						(result_src == 2'b10) ? pc_plus4 : alu_result;
+	// mux para seleccionar resultado final
+	assign ResultW = (ResultSrcW == 2'b00) ? ALUResultW :
+					 (ResultSrcW == 2'b01) ? ReadDataW :
+					 (ResultSrcW == 2'b10) ? PCPlus4W : ALUResultW;
 
 endmodule
