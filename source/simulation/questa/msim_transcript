@@ -24,36 +24,36 @@
 # Copying d:/quartus/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/instruction_memory.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/main_decoder.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:59:30 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/instruction_memory.v 
-# -- Compiling module instruction_memory
+# Start time: 13:12:29 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/main_decoder.v 
+# -- Compiling module main_decoder
 # 
 # Top level modules:
-# 	instruction_memory
-# End time: 12:59:31 on Jun 10,2025, Elapsed time: 0:00:01
+# 	main_decoder
+# End time: 13:12:29 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/instruction_memory_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/main_decoder_tb.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:59:31 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/instruction_memory_tb.v 
-# -- Compiling module instruction_memory_tb
+# Start time: 13:12:29 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/main_decoder_tb.v 
+# -- Compiling module main_decoder_tb
 # 
 # Top level modules:
-# 	instruction_memory_tb
-# End time: 12:59:31 on Jun 10,2025, Elapsed time: 0:00:00
+# 	main_decoder_tb
+# End time: 13:12:29 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  instruction_memory_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" instruction_memory_tb 
-# Start time: 12:59:31 on Jun 10,2025
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  main_decoder_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" main_decoder_tb 
+# Start time: 13:12:29 on Jun 10,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.instruction_memory_tb(fast)
-# Loading work.instruction_memory(fast)
+# Loading work.main_decoder_tb(fast)
+# Loading work.main_decoder(fast)
 # 
 # add wave *
 # view structure
@@ -61,10 +61,10 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Lectura de 0x00: instr = 00500113
-# Lectura de 0x04: instr = 00c00193
-# Lectura de 0x08: instr = ff718393
-# Lectura fuera de rango: instr = 00000000 (esperado: 00000000)
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa/instruction_memory_wave.do
-# End time: 13:05:14 on Jun 10,2025, Elapsed time: 0:05:43
-# Errors: 0, Warnings: 1
+# LW: reg_write=1, imm_src=00, alu_src=1, mem_write=0, result_src=01, branch=0, alu_op=00, jump=0
+# SW: reg_write=0, imm_src=01, alu_src=1, mem_write=1, result_src=xx, branch=0, alu_op=00, jump=0
+# R-type: reg_write=1, imm_src=xx, alu_src=0, mem_write=0, result_src=00, branch=0, alu_op=10, jump=0
+# BEQ: reg_write=0, imm_src=10, alu_src=0, mem_write=0, result_src=xx, branch=1, alu_op=01, jump=0
+# I-type: reg_write=1, imm_src=00, alu_src=1, mem_write=0, result_src=00, branch=0, alu_op=10, jump=0
+# JAL: reg_write=1, imm_src=11, alu_src=x, mem_write=0, result_src=10, branch=0, alu_op=xx, jump=1
+# Default: reg_write=0, imm_src=00, alu_src=0, mem_write=0, result_src=00, branch=0, alu_op=00, jump=0
