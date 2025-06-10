@@ -21,7 +21,7 @@ module top(
 	reg [1:0] ResultSrcE;
 	reg [2:0] ALUControlE;
 	reg [31:0] RD1E, RD2E, PCE, ImmExtE, PCPlus4E;
-	reg [4:0] Rs1E, Rs2E, RdE;	// direcciones de registros para forwarding futuro
+	reg [4:0] Rs1E, Rs2E, RdE;	// direcciones de registros para forwarding 
 	
 	// ========== SEÑALES DE EXECUTE (E) ==========
 	wire [31:0] SrcAE, SrcBE, ALUResultE, PCTargetE;
@@ -45,13 +45,20 @@ module top(
 	// ========== SEÑALES DE WRITEBACK (W) ==========
 	wire [31:0] ResultW;
 
+// ========== SEÑALES DE HAZARD UNIT ==========
+	wire [1:0] ForwardAE, ForwardBE;
+	wire StallF, StallD, FlushD, FlushE;
+	wire [31:0] SrcAE_Forward, SrcBE_Forward;  // señales con forwarding aplicado
+
+
+
 	// ========== FETCH STAGE ==========
 	
 	// program counter
 	program_counter pc_reg(
 		.clk(clk),
 		.reset(reset),
-		.pc_next(PCNextF),
+		.pc_next(StallF ? PCF : PCNextF),   // si hay stall, mantener PC actual
 		.pc(PCF)
 	);
 	
@@ -70,16 +77,20 @@ module top(
 	// ========== REGISTRO IF/ID ==========
 	always @(posedge clk or posedge reset) begin
 		if (reset) begin
-			InstrD <= 32'h00000000;	// nop instruction
+			InstrD <= 32'h00000000;
 			PCD <= 32'h00000000;
 			PCPlus4D <= 32'h00000000;
-		end else begin
+		end else if (FlushD) begin      // nuevo: flush tiene prioridad
+			InstrD <= 32'h00000000;     // nop instruction
+			PCD <= 32'h00000000;
+			PCPlus4D <= 32'h00000000;
+		end else if (!StallD) begin     // nuevo: solo actualizar si no hay stall
 			InstrD <= InstrF;
 			PCD <= PCF;
 			PCPlus4D <= PCPlus4F;
 		end
+		// si hay stall pero no flush, mantiene valores actuales
 	end
-
 	// ========== DECODE STAGE ==========
 	
 	// unidad de control
@@ -118,7 +129,7 @@ module top(
 
 	// ========== REGISTRO ID/EX ==========
 	always @(posedge clk or posedge reset) begin
-		if (reset) begin
+		if (reset || FlushE) begin
 			// control signals
 			RegWriteE <= 1'b0;
 			ALUSrcE <= 1'b0;
@@ -165,10 +176,20 @@ module top(
 	end
 
 	// ========== EXECUTE STAGE ==========
-	
-	// mux para segundo operando de alu
-	assign SrcBE = ALUSrcE ? ImmExtE : RD2E;
-	assign SrcAE = RD1E;	// por claridad, aunque es directo
+
+	// muxes de forwarding para srcA
+	assign SrcAE_Forward = (ForwardAE == 2'b10) ? ALUResultM :    // forward desde memory
+						(ForwardAE == 2'b01) ? ResultW :       // forward desde writeback  
+						RD1E;                                  // valor normal
+
+	// muxes de forwarding para srcB
+	assign SrcBE_Forward = (ForwardBE == 2'b10) ? ALUResultM :    // forward desde memory
+						(ForwardBE == 2'b01) ? ResultW :       // forward desde writeback
+						RD2E;                                  // valor normal
+
+	// mux para segundo operando de alu (ahora usa forwarded value)
+	assign SrcBE = ALUSrcE ? ImmExtE : SrcBE_Forward;
+	assign SrcAE = SrcAE_Forward;
 	
 	// alu
 	alu alu_unit(
@@ -177,6 +198,27 @@ module top(
 		.alu_control(ALUControlE),
 		.result(ALUResultE),
 		.zero(ZeroE)
+	);
+
+		// hazard unit
+	hazard_unit hu(
+		.Rs1E(Rs1E),
+		.Rs2E(Rs2E), 
+		.RdE(RdE),
+		.Rs1D(InstrD[19:15]),
+		.Rs2D(InstrD[24:20]),
+		.RdM(RdM),
+		.RdW(RdW),
+		.RegWriteM(RegWriteM),
+		.RegWriteW(RegWriteW),
+		.ResultSrcE(ResultSrcE),
+		.PCSrcE(PCSrcE),
+		.ForwardAE(ForwardAE),
+		.ForwardBE(ForwardBE),
+		.StallF(StallF),
+		.StallD(StallD),
+		.FlushD(FlushD),
+		.FlushE(FlushE)
 	);
 	
 	// lógica de branch/jump
