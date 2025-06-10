@@ -1,0 +1,85 @@
+# Quartus II generated files
+*.rpt
+*.summary
+*.pin
+*.jdi
+*.sof
+*.pof
+*.rbf
+*.done
+*.qws
+*.bak
+*.qarlog
+*.qar
+*.qpg
+*.qdb
+*.qtl
+*.bak1
+*.bak3
+*.bak2
+*.sft
+
+
+# Quartus database and work files
+db/
+incremental_db/
+work/
+#simulation/
+#*.wlf
+
+
+*.vstf
+
+# ModelSim/QuestaSim files
+*.mpf
+*.mti
+#vsim.wlf
+#transcript
+#*.wlf
+work/
+#modelsim.ini
+
+# Compilation output
+output_files/
+*.map
+*.fit
+*.asm
+*.sta
+*.eda
+*.qar
+
+# TimeQuest
+*.sdc.bak
+*.tao
+*.tco
+
+# Other Quartus files
+*.qpf.bak
+*.qsf.bak
+PLLJ_PLLSPE_INFO.txt
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Temporary files
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Backup files
+*_old
+*_backup
+*.orig

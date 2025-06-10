@@ -1,0 +1,289 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/simulation/questa
+T_opt
+!s110 1748584186
+V=@P^N>M7m9[O19`NiZ?M@0
+04 6 4 work top_tb fast 0
+=1-141333543d91-683946f9-29f-45b0
+R0
+!s12b OEM100
+!s124 OEM10U11 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+valu
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu.v
+Z3 !s110 1748584184
+!i10b 1
+!s100 [UId[`^B]_oRP5YIzT<N@1
+I_SKOL3BdCKVMfYnf:`iL_3
+R1
+w1748404471
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu.v
+!i122 4
+L0 1 23
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z6 !s108 1748584184.000000
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu.v|
+!i113 0
+Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+valu_decoder
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu_decoder.v
+R3
+!i10b 1
+!s100 hK`P9QWA9mQNKWIlGRCac0
+I[=TJg4bJ3Y92UBmX`2QbZ2
+R1
+w1748405215
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu_decoder.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu_decoder.v
+!i122 6
+L0 1 33
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/alu_decoder.v|
+!i113 0
+R7
+R8
+R2
+vcontrol_unit
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/control_unit.v
+R3
+!i10b 1
+!s100 zabJgA=iEUP:;:RXDY6YO3
+IG5iIf5bSUmHV9l7ONk<Pm3
+R1
+w1748405041
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/control_unit.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/control_unit.v
+!i122 3
+L0 1 42
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/control_unit.v|
+!i113 0
+R7
+R8
+R2
+vdata_memory
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/data_memory.v
+R3
+!i10b 1
+!s100 kG72S]D_PbQ2`YWCH>l8:0
+IMLlXWi@9fBekVccMDCD6L0
+R1
+w1748404411
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/data_memory.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/data_memory.v
+!i122 2
+L0 1 25
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/data_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/data_memory.v|
+!i113 0
+R7
+R8
+R2
+vimm_extend
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/imm_extend.v
+R3
+!i10b 1
+!s100 [UN4Ih<=YN7L1Ql_nLed70
+I:`R7i7DbK<e::=4]dPQTF2
+R1
+w1748404409
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/imm_extend.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/imm_extend.v
+!i122 1
+L0 1 39
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/imm_extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/imm_extend.v|
+!i113 0
+R7
+R8
+R2
+vinstruction_memory
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/instruction_memory.v
+R3
+!i10b 1
+!s100 =9KLOTazf@_?3ibEcL0U_2
+IWGzJ5Jkb2d:e@`V_nCd6n3
+R1
+w1748323112
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/instruction_memory.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/instruction_memory.v
+!i122 9
+L0 1 22
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/instruction_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/instruction_memory.v|
+!i113 0
+R7
+R8
+R2
+vmain_decoder
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/main_decoder.v
+R3
+!i10b 1
+!s100 hjXUXCL5IeZo[MQ0Hdnc72
+IodJ3kTzGFzFGUEc9_m^z:2
+R1
+w1748317246
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/main_decoder.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/main_decoder.v
+!i122 5
+L0 1 94
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/main_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/main_decoder.v|
+!i113 0
+R7
+R8
+R2
+vprogram_counter
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/program_counter.v
+R3
+!i10b 1
+!s100 bKNA>5gAXjzTmo^3gWaRj3
+I=G9e`VXYc^iUKjJVYnTGG3
+R1
+w1748480746
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/program_counter.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/program_counter.v
+!i122 7
+L0 1 15
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/program_counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/program_counter.v|
+!i113 0
+R7
+R8
+R2
+vregister_file
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/register_file.v
+R3
+!i10b 1
+!s100 i?XkK[6>M^I09I[MWl3ZM1
+I:W?YaLXU<PKI13m033FB43
+R1
+w1748404493
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/register_file.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/register_file.v
+!i122 8
+L0 1 27
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/register_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/register_file.v|
+!i113 0
+R7
+R8
+R2
+vtop
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top.v
+R3
+!i10b 1
+!s100 A0MK>:2zNMm7A]LUPgP@h3
+ISMzm_:`WY]PY3FD7YO1T90
+R1
+w1748480823
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top.v
+!i122 0
+L0 1 121
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top.v|
+!i113 0
+R7
+R8
+R2
+vtop_tb
+2C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v
+!s110 1748584185
+!i10b 1
+!s100 eXFXRNM6QRziO6AUX[c8I1
+IjaUAL^e5i4O:79;2T6SJX3
+R1
+w1748481407
+8C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v
+FC:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v
+!i122 10
+L0 1 30
+R4
+R5
+r1
+!s85 0
+31
+!s108 1748584185.000000
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source|C:/Users/janto/Desktop/FPGAs/riscv_single_cycle_processor/source/top_tb.v|
+!i113 0
+R7
+R8
+R2
