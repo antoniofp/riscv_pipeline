@@ -1,8 +1,10 @@
 m255
 K4
 z2
-!s12c _opt
+!s12c _opt1
 Z0 !s99 nomlopt
+!s12c _opt
+R0
 !s11f vlog 2023.3 2023.07, Jul 17 2023
 13
 !s112 1.1
@@ -10,64 +12,317 @@ Z0 !s99 nomlopt
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 dC:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa
+Z1 dC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/simulation/questa
 T_opt
-!s110 1749593399
-VY>iI[:eUXnUX9mP2[z]Y93
-04 14 4 work hazard_unit_tb fast 0
-=1-98fa9bf3bf64-6848ad36-3ac-548
+!s110 1749617642
+VzJSP@@j7c8OVOO=MaY__[3
+Z2 04 6 4 work top_tb fast 0
+=1-141333543d91-68490be9-34a-9958
 R0
-!s12b OEM100
-!s124 OEM10U2 
-o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
-Z2 tCvgOpt 0
+Z3 !s12b OEM100
+Z4 !s124 OEM10U12 
+Z5 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z6 tCvgOpt 0
 n@_opt
-OL;O;2023.3;77
-vhazard_unit
-2C:/Users/edwin/Desktop/riscv_pipeline/source/hazard_unit.v
-Z3 !s110 1749593397
-!i10b 1
-!s100 SHL6>QlLObi5U4`FiAYzd2
-IJW=ih:1N?0flChHAb^Y7_2
+Z7 OL;O;2023.3;77
 R1
-w1749592431
-8C:/Users/edwin/Desktop/riscv_pipeline/source/hazard_unit.v
-FC:/Users/edwin/Desktop/riscv_pipeline/source/hazard_unit.v
-!i122 0
-L0 1 73
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2023.3;77
-r1
-!s85 0
-31
-!s108 1749593396.000000
-!s107 C:/Users/edwin/Desktop/riscv_pipeline/source/hazard_unit.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source|C:/Users/edwin/Desktop/riscv_pipeline/source/hazard_unit.v|
-!i113 0
-Z6 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-!s92 -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+T_opt1
+!s110 1749617654
+VBlCEDCbG1:^L:9Y=15U1E3
 R2
-vhazard_unit_tb
-2C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches/hazard_unit_tb.v
+=1-141333543d91-68490bf6-a7-8538
+R0
 R3
-!i10b 1
-!s100 Yd?HKGY=TD^ZM<ABKW^hE2
-ID^MLJloB;@U:oMS]lG[5S1
-R1
-w1749593123
-8C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches/hazard_unit_tb.v
-FC:/Users/edwin/Desktop/riscv_pipeline/source/testbenches/hazard_unit_tb.v
-!i122 1
-L0 3 62
 R4
 R5
+R6
+n@_opt1
+R7
+valu
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu.v
+Z8 !s110 1749617653
+!i10b 1
+!s100 [UId[`^B]_oRP5YIzT<N@1
+IfzDKU]d=V=X1E6iQjN`R01
+R1
+w1748404471
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu.v
+!i122 9
+L0 1 23
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2023.3;77
 r1
 !s85 0
 31
-!s108 1749593397.000000
-!s107 C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches/hazard_unit_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches|C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches/hazard_unit_tb.v|
+Z11 !s108 1749617653.000000
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu.v|
 !i113 0
+Z12 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R6
-!s92 -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
+valu_decoder
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu_decoder.v
+R8
+!i10b 1
+!s100 hK`P9QWA9mQNKWIlGRCac0
+I?<EW@G5C9N]ZkLOJ;=2BT2
+R1
+w1748405215
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu_decoder.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu_decoder.v
+!i122 8
+L0 1 33
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu_decoder.v|
+!i113 0
+R12
+R13
+R6
+vcontrol_unit
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/control_unit.v
+R8
+!i10b 1
+!s100 YeAb3lO@e;dZgZ9PMdFQ30
+Ie4=gb7o;h5IBoGXOmUOLb3
+R1
+w1749571361
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/control_unit.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/control_unit.v
+!i122 7
+L0 1 40
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/control_unit.v|
+!i113 0
+R12
+R13
+R6
+vdata_memory
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/data_memory.v
+R8
+!i10b 1
+!s100 kG72S]D_PbQ2`YWCH>l8:0
+Icc]I>Q6^hdS7KM]z^SkD91
+R1
+w1748404411
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/data_memory.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/data_memory.v
+!i122 6
+L0 1 25
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/data_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/data_memory.v|
+!i113 0
+R12
+R13
+R6
+vhazard_unit
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/hazard_unit.v
+Z14 !s110 1749617652
+!i10b 1
+!s100 SHL6>QlLObi5U4`FiAYzd2
+ITljBYMZMYh<0HLkn<C1F43
+R1
+w1749591674
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/hazard_unit.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/hazard_unit.v
+!i122 0
+L0 1 73
+R9
+R10
+r1
+!s85 0
+31
+Z15 !s108 1749617652.000000
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/hazard_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/hazard_unit.v|
+!i113 0
+R12
+R13
+R6
+vimm_extend
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/imm_extend.v
+R8
+!i10b 1
+!s100 [UN4Ih<=YN7L1Ql_nLed70
+IX^;LP>W47aGPQkCeBFEBN1
+R1
+w1748404409
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/imm_extend.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/imm_extend.v
+!i122 5
+L0 1 39
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/imm_extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/imm_extend.v|
+!i113 0
+R12
+R13
+R6
+vinstruction_memory
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/instruction_memory.v
+R8
+!i10b 1
+!s100 =9KLOTazf@_?3ibEcL0U_2
+Id;RezHZ:F?dF:3<VWX<oo2
+R1
+w1748323112
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/instruction_memory.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/instruction_memory.v
+!i122 10
+L0 1 22
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/instruction_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/instruction_memory.v|
+!i113 0
+R12
+R13
+R6
+vmain_decoder
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/main_decoder.v
+R8
+!i10b 1
+!s100 hjXUXCL5IeZo[MQ0Hdnc72
+IT9f@eLL1Aa7KOH?_ZFj9C2
+R1
+w1748317246
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/main_decoder.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/main_decoder.v
+!i122 4
+L0 1 94
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/main_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/main_decoder.v|
+!i113 0
+R12
+R13
+R6
+vprogram_counter
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/program_counter.v
+R8
+!i10b 1
+!s100 bKNA>5gAXjzTmo^3gWaRj3
+ImLjbfk;M3;PgeEHTIf5mV2
+R1
+w1748480746
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/program_counter.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/program_counter.v
+!i122 3
+L0 1 15
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/program_counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/program_counter.v|
+!i113 0
+R12
+R13
+R6
+vregister_file
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/register_file.v
+R14
+!i10b 1
+!s100 A`^ELL9JXz;_WUF4XTC>a3
+IkFO<emKnmN5L7FRQD^LjI2
+R1
+w1749564833
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/register_file.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/register_file.v
+!i122 2
+L0 1 27
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/register_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/register_file.v|
+!i113 0
+R12
+R13
+R6
+vtop
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top.v
+R14
+!i10b 1
+!s100 3G7=SlZgff8;oolf[CI7G1
+Iel4cZ@Chd]0hX@U:91SMY1
+R1
+w1749607502
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top.v
+!i122 1
+L0 1 321
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top.v|
+!i113 0
+R12
+R13
+R6
+vtop_tb
+2C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v
+R8
+!i10b 1
+!s100 een0LYEfZ1UZN[mhFZ?eT2
+IdU]afVEXP?Co>h0@9:_@:1
+R1
+w1749617642
+8C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v
+FC:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v
+!i122 11
+L0 1 30
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source|C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v|
+!i113 0
+R12
+R13
+R6

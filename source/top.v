@@ -48,6 +48,7 @@ module top(
 // ========== SEÑALES DE HAZARD UNIT ==========
 	wire [1:0] ForwardAE, ForwardBE;
 	wire StallF, StallD, FlushD, FlushE;
+
 	wire [31:0] SrcAE_Forward, SrcBE_Forward;  // señales con forwarding aplicado
 
 
@@ -58,7 +59,9 @@ module top(
 	program_counter pc_reg(
 		.clk(clk),
 		.reset(reset),
-		.pc_next(StallF ? PCF : PCNextF),   // si hay stall, mantener PC actual
+		//puedo modificar el PC sin modificar el modulo de program_counter, 
+		.pc_next(StallF ? PCF : PCNextF),   // si hay stall, le va a entrar lo mismo que sacó el ciclo anterior, el PC sigue igual
+
 		.pc(PCF)
 	);
 	
@@ -75,22 +78,22 @@ module top(
 	assign PCNextF = PCSrcE ? PCTargetE : PCPlus4F;
 
 	// ========== REGISTRO IF/ID ==========
-	always @(posedge clk or posedge reset) begin
-		if (reset) begin
-			InstrD <= 32'h00000000;
-			PCD <= 32'h00000000;
-			PCPlus4D <= 32'h00000000;
-		end else if (FlushD) begin      // nuevo: flush tiene prioridad
-			InstrD <= 32'h00000000;     // nop instruction
-			PCD <= 32'h00000000;
-			PCPlus4D <= 32'h00000000;
-		end else if (!StallD) begin     // nuevo: solo actualizar si no hay stall
-			InstrD <= InstrF;
-			PCD <= PCF;
-			PCPlus4D <= PCPlus4F;
-		end
-		// si hay stall pero no flush, mantiene valores actuales
+always @(posedge clk or posedge reset) begin
+	if (reset) begin //no mezclar señales de reset y flush, una es flanco y otra es nivel, el verilog peta
+		InstrD <= 32'h00000000;
+		PCD <= 32'h00000000;
+		PCPlus4D <= 32'h00000000;
+	end else if (FlushD) begin      // nuevo: flush tiene prioridad
+		InstrD <= 32'h00000000;     // nop instruction
+		PCD <= 32'h00000000;
+		PCPlus4D <= 32'h00000000;
+	end else if (!StallD) begin     // nuevo: solo actualizar si no hay stall
+		InstrD <= InstrF;
+		PCD <= PCF;
+		PCPlus4D <= PCPlus4F;
 	end
+	// si hay stall pero no flush, mantiene valores actuales
+end
 	// ========== DECODE STAGE ==========
 	
 	// unidad de control
@@ -129,7 +132,7 @@ module top(
 
 	// ========== REGISTRO ID/EX ==========
 	always @(posedge clk or posedge reset) begin
-		if (reset || FlushE) begin
+		if (reset) begin
 			// control signals
 			RegWriteE <= 1'b0;
 			ALUSrcE <= 1'b0;
@@ -151,6 +154,26 @@ module top(
 			Rs2E <= 5'b00000;
 			RdE <= 5'b00000;
 		end 
+		else if (FlushE) begin
+			// si hay flush, se pone todo a 0
+			RegWriteE <= 1'b0;
+			ALUSrcE <= 1'b0;
+			MemWriteE <= 1'b0;
+			BranchE <= 1'b0;
+			JumpE <= 1'b0;
+			ResultSrcE <= 2'b00;
+			ALUControlE <= 3'b000;
+			
+			RD1E <= 32'h00000000;
+			RD2E <= 32'h00000000;
+			PCE <= 32'h00000000;
+			ImmExtE <= 32'h00000000;
+			PCPlus4E <= 32'h00000000;
+			
+			Rs1E <= 5'b00000;
+			Rs2E <= 5'b00000;
+			RdE <= 5'b00000;
+		end
 		else begin
 			// control signals
 			RegWriteE <= RegWriteD;

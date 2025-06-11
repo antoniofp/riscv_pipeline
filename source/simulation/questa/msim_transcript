@@ -17,52 +17,204 @@
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is janto@PLAYSTATIONLSB.
 # vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Errors: 0, Warnings: 1
 # vmap work rtl_work
 # Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
 # vmap work rtl_work 
-# Copying d:/quartus/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source {C:/Users/edwin/Desktop/riscv_pipeline/source/hazard_unit.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/hazard_unit.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:09:56 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source" C:/Users/edwin/Desktop/riscv_pipeline/source/hazard_unit.v 
+# Start time: 22:54:12 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/hazard_unit.v 
 # -- Compiling module hazard_unit
 # 
 # Top level modules:
 # 	hazard_unit
-# End time: 16:09:57 on Jun 10,2025, Elapsed time: 0:00:01
+# End time: 22:54:12 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches {C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches/hazard_unit_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:09:57 on Jun 10,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches" C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches/hazard_unit_tb.v 
-# -- Compiling module hazard_unit_tb
+# Start time: 22:54:12 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top.v 
+# -- Compiling module top
 # 
 # Top level modules:
-# 	hazard_unit_tb
-# End time: 16:09:57 on Jun 10,2025, Elapsed time: 0:00:00
+# 	top
+# End time: 22:54:12 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/register_file.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:12 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/register_file.v 
+# -- Compiling module register_file
+# 
+# Top level modules:
+# 	register_file
+# End time: 22:54:12 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/program_counter.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/program_counter.v 
+# -- Compiling module program_counter
+# 
+# Top level modules:
+# 	program_counter
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/main_decoder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/main_decoder.v 
+# -- Compiling module main_decoder
+# 
+# Top level modules:
+# 	main_decoder
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/imm_extend.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/imm_extend.v 
+# -- Compiling module imm_extend
+# 
+# Top level modules:
+# 	imm_extend
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/data_memory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/data_memory.v 
+# -- Compiling module data_memory
+# 
+# Top level modules:
+# 	data_memory
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/control_unit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/control_unit.v 
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu_decoder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu_decoder.v 
+# -- Compiling module alu_decoder
+# 
+# Top level modules:
+# 	alu_decoder
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/instruction_memory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/instruction_memory.v 
+# -- Compiling module instruction_memory
+# 
+# Top level modules:
+# 	instruction_memory
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  hazard_unit_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" hazard_unit_tb 
-# Start time: 16:09:57 on Jun 10,2025
+# vlog -vlog01compat -work work +incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source {C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 22:54:13 on Jun 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source" C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v 
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 22:54:13 on Jun 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  top_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" top_tb 
+# Start time: 22:54:13 on Jun 10,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.hazard_unit_tb(fast)
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading work.program_counter(fast)
+# Loading work.instruction_memory(fast)
+# Loading work.control_unit(fast)
+# Loading work.main_decoder(fast)
+# Loading work.alu_decoder(fast)
+# Loading work.register_file(fast)
+# Loading work.imm_extend(fast)
+# Loading work.alu(fast)
 # Loading work.hazard_unit(fast)
+# Loading work.data_memory(fast)
 # 
 # add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: janto  Hostname: PLAYSTATIONLSB  ProcessID: 39256
+#           Attempting to use alternate WLF file "./wlftjc2qbv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftjc2qbv
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $finish    : C:/Users/edwin/Desktop/riscv_pipeline/source/testbenches/hazard_unit_tb.v(61)
-#    Time: 60 ns  Iteration: 0  Instance: /hazard_unit_tb
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/edwin/Desktop/riscv_pipeline/source/simulation/questa/hazar_unit_wave.do
-# End time: 16:19:40 on Jun 10,2025, Elapsed time: 0:09:43
-# Errors: 0, Warnings: 1
+# ** Note: $stop    : C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v(27)
+#    Time: 1070 ps  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v line 27
+add wave -position end  sim:/top_tb/cpu_dut/alu_unit/src_a
+add wave -position end  sim:/top_tb/cpu_dut/alu_unit/src_b
+add wave -position end  sim:/top_tb/cpu_dut/alu_unit/alu_control
+add wave -position end  sim:/top_tb/cpu_dut/alu_unit/result
+add wave -position end  sim:/top_tb/cpu_dut/PCF
+add wave -position end  sim:/top_tb/cpu_dut/StallF
+add wave -position end  sim:/top_tb/cpu_dut/StallD
+add wave -position end  sim:/top_tb/cpu_dut/FlushD
+add wave -position end  sim:/top_tb/cpu_dut/FlushE
+add wave -position end  sim:/top_tb/cpu_dut/ForwardAE
+add wave -position end  sim:/top_tb/cpu_dut/ForwardBE
+add wave -position end  sim:/top_tb/cpu_dut/PCPlus4F
+add wave -position end  sim:/top_tb/cpu_dut/PCPlus4D
+add wave -position end  sim:/top_tb/cpu_dut/PCPlus4E
+add wave -position end  sim:/top_tb/cpu_dut/PCPlus4M
+add wave -position end  sim:/top_tb/cpu_dut/PCPlus4W
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading work.program_counter(fast)
+# Loading work.instruction_memory(fast)
+# Loading work.control_unit(fast)
+# Loading work.main_decoder(fast)
+# Loading work.alu_decoder(fast)
+# Loading work.register_file(fast)
+# Loading work.imm_extend(fast)
+# Loading work.alu(fast)
+# Loading work.hazard_unit(fast)
+# Loading work.data_memory(fast)
+run -all
+# ** Note: $stop    : C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v(27)
+#    Time: 1070 ps  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v line 27
