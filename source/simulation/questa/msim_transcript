@@ -218,3 +218,4 @@ run -all
 # ** Note: $stop    : C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v(27)
 #    Time: 1070 ps  Iteration: 0  Instance: /top_tb
 # Break in Module top_tb at C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/top_tb.v line 27
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/janto/Desktop/FPGAs/riscv_pipeline/source/simulation/questa/wave_final.do
